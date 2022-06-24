@@ -1,7 +1,6 @@
 // validation name and email
 const userName = document.querySelector("#userName");
 const userEmail = document.querySelector("#userEmail");
-const errName = document.querySelector("#errName")
 //name
 function validateName(){
     if (userName.value.length == 0){ 
@@ -20,5 +19,25 @@ function validateName(){
         return true;
 }
 userName.addEventListener("input", validateName)
-
+//email
+function validateEmail(){
+    const regex = /^([a-zA-Z09.]{4,20})@([a-zA-Z09.]{4,20})\.([a-zA-Z]{2,5})$/;
+    if (userEmail.value.length == 0){ 
+    errEmail.innerText = "Renseignez une adresse mail svp!"
+    errEmail.style.color = "red";
+    return false;
+    }
+    if (regex.test(userEmail.value)){ 
+    errEmail.innerText = "Votre mail est valide, cliquer sur commencer"
+    errEmail.style.color = "bleu";
+   return true;
+    }
+    else { 
+        errEmail.innerText = "Entrez une adresse mail valide svp!"
+        errEmail.style.color = "red";
+        return false;
+    }
+  
+}
+userEmail.addEventListener("input", validateEmail)
 
