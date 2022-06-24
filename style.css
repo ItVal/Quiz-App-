@@ -18,7 +18,7 @@ body{
     
 }
 /* cacher nos deux autres sections par defaut */
-#question, #resultat{
+#accueil, #resultat{
     display: none;
 }
 /* contenaire principal */
@@ -38,7 +38,7 @@ body{
 }
 .enoncer{
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     margin-left: 50px;
     margin-right: 50px;
 }
@@ -59,8 +59,7 @@ body{
     width: 150px;
     margin-top: 30px;
     margin-bottom: 35px;
-    border-radius: 10px;
-   
+    border-radius: 10px; 
 }
 .btn-class{
     text-align: center;
@@ -68,4 +67,7 @@ body{
 .input{
     height: 35px;
 }
+
+
+
 
