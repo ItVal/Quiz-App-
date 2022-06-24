@@ -4,35 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Quiz App</title>
 </head>
 <body>
     <!-- Accueil -->
     <section  class="quizSec" id="accueil">
-        <div class="contenaire" id="aContenaire">
             <h2 class="titre" id="title">JavaScript Quiz</h2>
             <p class="enoncer">
                 Evaluez vos connaissances en JavaScript en répondant aux questions que nous aimons spécialement sélectionnés pour vous. <br> C'est fun et gratuit.
             </p>
-            <form action="">
-                <div>
+            <div>
+                <div class="form" id="formS">
                 <label for="">Nom</label>
                 <input type="text" placeholder="Entrez votre nom ici">
-                <label for="">Nom</label>
+                <label for="">Email</label>
                 <input type="text" placeholder="Entrez votre nom ici">
                 </div>
                 <div class="btn" id="btn-valider">
                     <input type="button" value="">
                 </div>
-            </form>
-        </div>
+            </div>
     </section>
     <!-- Questions -->
-    <section class="quizSec" id="question" style.display = "none">
+    <section class="quizSec" id="question">
 
     </section>
     <!-- Resultat -->
-    <section class="quizSec" id="resultat"  style.display = "none">
+    <section class="quizSec" id="resultat">
 
     </section>
 </body>
