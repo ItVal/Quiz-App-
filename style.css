@@ -18,7 +18,7 @@ body{
     
 }
 /* cacher nos deux autres sections par defaut */
-#accueil, #question{
+#resultat, #question{
     display: none;
 }
 /* contenaire principal */
