@@ -18,7 +18,7 @@ body{
     
 }
 /* cacher nos deux autres sections par defaut */
-#accueil, #resultat{
+#accueil, #question{
     display: none;
 }
 /* contenaire principal */
@@ -153,4 +153,9 @@ body{
 
 span > input{
     cursor: pointer;
+}
+
+/* resultat */
+#resultat{
+    width: 900px;
 }
