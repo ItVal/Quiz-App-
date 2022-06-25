@@ -86,10 +86,7 @@ setInterval(() => {
 //reset radio
 // const inputs = cocument.querySelectorAll('input[type="radio"]');
 // const reset = document.querySelectorAll("res-containeur")
-// function reunitialiser(){
-//     for (let j = 0; j < inputs.length; j++){
-//         reset[j].style.border = "1px solid #bbb8b8";
-//     }
+// 
 
 // }
 
@@ -265,7 +262,12 @@ function boutonTerminer(){
         submit.innerText = "Terminer";
     }
 }
-
+//reset
+function reunitialiser(){
+   for (let j = 0; j < inputs.length; j++){
+   reset[j].style.border = "1px solid #bbb8b8"; 
+  }
+}
 
 
 
