@@ -41,3 +41,19 @@ function validateEmail(){
 }
 userEmail.addEventListener("input", validateEmail)
 
+// Chargement section questions
+const  beginPage = document.getElementById("btnBegin")
+beginPage.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (validateName() && validateEmail()){
+        document.getElementById("accueil").style.display = "none";
+        document.getElementById("question").style.display = "flex";
+        // storage emai & name
+        resName.innerHTML = userName.value;
+        resEmail.innerHTML = userEmail.value;
+        
+    }
+})
+
+
+

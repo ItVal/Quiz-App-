@@ -24,12 +24,12 @@
                 <span id="errEmail"></span>
                 </div>
                 <div class="btn-class" id="btn-valider">
-                    <input id="btn" class="btn" type="button" value="Commencer">
+                    <input id="btnBegin" class="btn" type="submit" value="Commencer">
                 </div>
             </div>
     </section>
     <!-- Questions -->
-    <section class="quizSec" id="question">
+    <section class="quizSec" id="question" style="display: none">
         <h2 class="titre" id="titre">Question ici</h2>
         <div class="quesTimer">
             <p id="charQ" class="qChar"> Question 1/15</p>
@@ -64,9 +64,9 @@
     </section>
 
     <!-- Game over -->
-    <section class="quizSec" id="resultat">
-        <h2 class="titre" id="titre">ValNas</h2>
-        <p id="affEmail" class="affEmail">irnasvalentin@gmail.com</p>
+    <section class="quizSec" id="resultat" style="display: none">
+        <h2 class="titre" id="resName">ValNas</h2>
+        <p id="affEmail" class="resEmail">irnasvalentin@gmail.com</p>
         
         <div class="imageRes" id="imgR">
             <svg width="174" height="174" viewBox="0 0 174 174" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -84,6 +84,7 @@
             <input class="btnS" id="begining" type="button" value="Accueil">
         </div>
     </section>
+
     <script src="script.js"></script>
 </body>
 </html>
