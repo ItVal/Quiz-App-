@@ -57,3 +57,23 @@ beginPage.addEventListener("click", function (e) {
 
 
 
+// Timeming for question
+const quiz = document.getElementById("question");
+let i = 60;
+setInterval(() => {
+    if (i >= 0 &&  quiz.style.display == "flex" ){
+        timer.innerHTML = i;
+        i--
+    }
+    // if (i <= 0){
+    //     timeOut();
+    // }
+}, 1000);
+
+// a function who help to going to the next question
+// function timeOut() {
+   
+// }
+
+
+
