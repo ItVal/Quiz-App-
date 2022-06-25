@@ -232,8 +232,22 @@ function deselectAnswers (){
     radioBtn.forEach(radioBtn => radioBtn.checked = false)
 }
 
+//chargement de questions
+function loadQuiz () {
+    deselectAnswers ()
+     const tabQuiz = quizData[contTab]
+     const nextQ = document.querySelector("#charQ")
+     affQuestion.innerText = tabQuiz.question
+     assertionA.innerText = tabQuiz.a
+     assertionB.innerText = tabQuiz.b
+     assertionC.innerText = tabQuiz.c
+     assertionD.innerText = tabQuiz.d
 
-
+     let questionNumber = parseInt(tabQuiz) + 1
+     nextQ.innerText = "Question " + questionNumber + "/15"
+          
+}
+loadQuiz ()
 
 
 
