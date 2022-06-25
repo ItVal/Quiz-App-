@@ -259,6 +259,13 @@ function captSelected () {
     return reponse 
 }
 
+// next to finish btn
+function boutonTerminer(){
+    if (contTab == 14) {
+        submit.innerText = "Terminer";
+    }
+}
+
 
 
 
