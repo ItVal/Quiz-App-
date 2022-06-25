@@ -55,6 +55,14 @@ beginPage.addEventListener("click", function (e) {
     }
 })
 
+// ProgressBar
+let k = 100;
+setInterval(() =>{
+    if(k >= 0 && quiz.style.display == "flex" ){
+        document.querySelector("#progressBs").style.width = k + "%";
+        k--
+    }
+}, 600)
 
 
 // Timeming for question
@@ -74,6 +82,9 @@ setInterval(() => {
 // function timeOut() {
    
 // }
+
+//reset radio
+
 
 
 
