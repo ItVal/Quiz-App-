@@ -244,10 +244,20 @@ function loadQuiz () {
      assertionD.innerText = tabQuiz.d
 
      let questionNumber = parseInt(tabQuiz) + 1
-     nextQ.innerText = "Question " + questionNumber + "/15"
-          
+     nextQ.innerText = "Question " + questionNumber + "/15"   
 }
 loadQuiz ()
+
+// capture de la selection
+function captSelected () {
+    let reponse 
+    radioBtn.forEach(radioBtn => {
+        if (radioBtn.checked){
+            reponse = radioBtn.id
+        }
+    })
+    return reponse 
+}
 
 
 
