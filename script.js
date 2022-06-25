@@ -216,8 +216,25 @@ const quizData = [
         correct: "d",
     },
 
-
-
 ];
+
+const radioBtn = document.querySelectorAll(".res")
+const affQuestion = document.querySelector("#titre")
+const assertionA = document.querySelector("#assA")
+const assertionB = document.querySelector("#assB")
+const assertionC = document.querySelector("#assC")
+const assertionD = document.querySelector("#assD")
+let contTab = 0;
+let score = 0;
+
+//deselect answers
+function deselectAnswers (){
+    radioBtn.forEach(radioBtn => radioBtn.checked = false)
+}
+
+
+
+
+
 
 
