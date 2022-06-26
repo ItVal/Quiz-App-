@@ -280,6 +280,7 @@ const submitBtn = document.querySelector("#submit");
 submitBtn.addEventListener('click', () => {
     // reunitialiser()
     const reponse = captSelected()
+ 
     k = 100;
     i = 60
     if (reponse){
