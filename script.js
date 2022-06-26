@@ -221,17 +221,12 @@ const assertionA = document.querySelector("#assA")
 const assertionB = document.querySelector("#assB")
 const assertionC = document.querySelector("#assC")
 const assertionD = document.querySelector("#assD")
-let contTab = 0;
-let score = 0;
-
-//deselect answers
-function deselectAnswers (){
-    radioBtn.forEach(radioBtn => radioBtn.checked = false)
-}
+let contTab = 0
+let score = 0
 
 //chargement de questions
-function loadQuiz () {
-    deselectAnswers ()
+function loadQuiz() {
+    deselectAnswers()
      const tabQuiz = quizData[contTab]
      const nextQ = document.querySelector("#charQ")
      affQuestion.innerText = tabQuiz.question
@@ -240,17 +235,22 @@ function loadQuiz () {
      assertionC.innerText = tabQuiz.c
      assertionD.innerText = tabQuiz.d
 
-     let questionNumber = parseInt(tabQuiz) + 1
+     let questionNumber = parseInt(contTab) + 1
      nextQ.innerText = "Question " + questionNumber + "/15"   
 }
-loadQuiz ()
+loadQuiz()
+
+//deselect answers
+function deselectAnswers() {
+    radioBtn.forEach(btnRadio => btnRadio.checked = false)
+}
 
 // capture de la selection
-function captSelected () {
+function captSelected() {
     let reponse 
-    radioBtn.forEach(radioBtn => {
-        if (radioBtn.checked){
-            reponse = radioBtn.id
+    radioBtn.forEach(btnRadio => {
+        if (btnRadio.checked){
+            reponse = btnRadio.id
         }
     })
     return reponse 
@@ -263,11 +263,11 @@ function boutonTerminer(){
     }
 }
 //reset
-function reunitialiser(){
-   for (let j = 0; j < inputs.length; j++){
-   reset[j].style.border = "1px solid #bbb8b8"; 
-  }
-}
+// function reunitialiser(){
+//    for (let j = 0; j < inputs.length; j++){
+//    reset[j].style.border = "1px solid #bbb8b8"; 
+//   }
+// }
 //img manager
 function imgEchec() {
     if (score < 8) {
@@ -275,6 +275,32 @@ function imgEchec() {
     }
 }
 
+//Next Button
+const submitBtn = document.querySelector("#submit");
+submitBtn.addEventListener('click', () => {
+    // reunitialiser()
+    const reponse = captSelected()
+    k = 100;
+    i = 60
+    if (reponse){
+        if (reponse === quizData[contTab].correct){
+            score++
+        }
+        contTab++
+        boutonTerminer()
 
+        if(contTab < quizData.length){
+            loadQuiz()
+        }
+        
+        else{
+            document.getElementById("question").style.display = "none";
+            imgEchec()
+            document.getElementById("resultat").style.display = "flex";
+            scoreFinal.innerHTML = `<h2> ${score}/${quizData.length} </h2>`
+        }
+    }
+
+})
 
 
