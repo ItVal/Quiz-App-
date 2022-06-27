@@ -21,7 +21,7 @@ function validateName(){
 userName.addEventListener("input", validateName)
 //email
 function validateEmail(){
-    const regex = /^([a-zA-Z09.]{4,20})@([a-zA-Z09.]{4,20})\.([a-zA-Z]{2,5})$/;
+    const regex = /^([a-zA-Z0-9.]{4,20})@([a-zA-Z0-9.]{4,20})\.([a-zA-Z]{2,5})$/;
     if (userEmail.value.length == 0){ 
     errEmail.innerText = "Renseignez une adresse mail svp!"
     errEmail.style.color = "red";
@@ -278,8 +278,28 @@ function imgEchec() {
     }
 }
 
-//Next Button
 const submitBtn = document.querySelector("#submit");
+
+function disabledBtn(){
+    if (btnRadio.checked){
+        submitBtn.disabled = false;
+    }
+}
+
+radioBtn.forEach(btnRadio => {
+    btnRadio.addEventListener('click', () => {
+        console.log("checked ")
+        if (btnRadio.checked){
+            submitBtn.disabled = false
+            submitBtn.style.backgroundColor = "green"
+            submitBtn.style.cursor = "pointer";
+        }
+    })
+    
+})
+
+//Next Button
+
 submitBtn.addEventListener('click', () => {
     // reunitialiser()
     const reponse = captSelected()
@@ -295,6 +315,9 @@ submitBtn.addEventListener('click', () => {
 
         if(contTab < quizData.length){
             loadQuiz()
+            submitBtn.disabled = true;
+            submitBtn.style.cursor = "not-allowed";
+            submitBtn.style.backgroundColor = "#0080006c"
         }
         
         else{
@@ -320,12 +343,13 @@ btnQuit.addEventListener('click', () => {
 
         contTab++
         
-        if(contTab < quizData.length) {
-            document.getElementById("question").style.display = "none";
-            imgEchec()
-            document.getElementById("resultat").style.display = "flex";
-            scoreFinal.innerHTML = `<h2> ${score}/${quizData.length} </h2>`
-        }
+        
+    }
+    if(contTab < quizData.length) {
+        document.getElementById("question").style.display = "none";
+        imgEchec()
+        document.getElementById("resultat").style.display = "flex";
+        scoreFinal.innerHTML = `<h2> ${score}/${quizData.length} </h2>`
     }
 
 })
@@ -334,4 +358,8 @@ btnQuit.addEventListener('click', () => {
 const home = document.querySelector("#begining");
 home.addEventListener('click', () => {
     location.reload(true);
+    // document.getElementById("resultat").style.display = "none";
+    // document.getElementById("accueil").style.display = "flex";
+    
+    
 })

@@ -17,6 +17,13 @@ body{
     margin-right: 35%;
     
 }
+
+
+
+input[type="email"]:invalid{
+    border-color: red;
+}
+
 /* cacher nos deux autres sections par defaut */
 
 /* contenaire principal */
@@ -133,6 +140,18 @@ input[type="radio"] +label:hover {
 .btnS{
     border: none;
   
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #0080006c;
+    height: 40px;
+    width: 150px;
+    margin-top: 30px;
+    margin-bottom: 35px;
+    border-radius: 5px; 
+    cursor: not-allowed;
+}
+#begining{
+    border: none;
     font-size: 20px;
     font-weight: bold;
     background-color: green;
