@@ -73,22 +73,30 @@ setInterval(() => {
         timer.innerHTML = i;
         i--
     }
-    // if (i <= 0){
-    //     timeOut();
-    // }
+    if (i <= 0){
+       timeOut();
+     }
 }, 1000);
 
-// a function who help to going to the next question
-// function timeOut() {
-   
-// }
+// a function who help to going to the next question when time is over
+ function timeOut() {
+    if (i == 0) { 
+        // reunitialiser()
+        contTab++
+        const reponse = captSelected()
+        k = 100;
+        i = 60
+    if (reponse){
+        if (reponse === quizData[contTab].correct){
+            score++
+        }
+     }
+        if(contTab < quizData.length){
+            loadQuiz()
+        }
+   }
+}
 
-//reset radio
-// const inputs = cocument.querySelectorAll('input[type="radio"]');
-// const reset = document.querySelectorAll("res-containeur")
-// 
-
-// }
 
 //quiz objet
 const quizData = [
