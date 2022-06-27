@@ -333,8 +333,5 @@ btnQuit.addEventListener('click', () => {
 //Home Button
 const home = document.querySelector("#begining");
 home.addEventListener('click', () => {
-    document.getElementById("resultat").style.display = "none";
-    document.getElementById("accueil").style.display = "flex";
-    deselectAnswers()
-    
+    location.reload(true);
 })
