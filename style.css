@@ -127,6 +127,7 @@ body{
     margin-bottom: 35px;
     border-radius: 10px; 
     margin-right: 30px;
+    cursor: pointer;
 }
 .quesTimer{
     display: flex;

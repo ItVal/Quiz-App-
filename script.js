@@ -270,12 +270,7 @@ function boutonTerminer(){
         submit.innerText = "Terminer";
     }
 }
-//reset
-// function reunitialiser(){
-//    for (let j = 0; j < inputs.length; j++){
-//    reset[j].style.border = "1px solid #bbb8b8"; 
-//   }
-// }
+
 //img manager
 function imgEchec() {
     if (score < 8) {
@@ -312,4 +307,25 @@ submitBtn.addEventListener('click', () => {
 
 })
 
+//Quit Button
+const btnQuit = document.querySelector(".btnQ");
 
+btnQuit.addEventListener('click', () => {
+    const reponse = captSelected()
+ 
+    if (reponse){
+        if (reponse === quizData[contTab].correct){
+            score++
+        }
+
+        contTab++
+        
+        if(contTab < quizData.length) {
+            document.getElementById("question").style.display = "none";
+            imgEchec()
+            document.getElementById("resultat").style.display = "flex";
+            scoreFinal.innerHTML = `<h2> ${score}/${quizData.length} </h2>`
+        }
+    }
+
+})
