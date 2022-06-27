@@ -244,7 +244,8 @@ function loadQuiz() {
      assertionD.innerText = tabQuiz.d
 
      let questionNumber = parseInt(contTab) + 1
-     nextQ.innerText = "Question " + questionNumber + "/15"   
+     nextQ.innerText = "Question " + questionNumber + "/15"  
+    
 }
 loadQuiz()
 
@@ -267,7 +268,7 @@ function captSelected() {
 // next to finish btn
 function boutonTerminer(){
     if (contTab == 14) {
-        submit.innerText = "Terminer";
+        submitBtn.innerText = "Terminer";
     }
 }
 
@@ -312,7 +313,7 @@ submitBtn.addEventListener('click', () => {
         }
         contTab++
         boutonTerminer()
-
+        
         if(contTab < quizData.length){
             loadQuiz()
             submitBtn.disabled = true;
@@ -363,3 +364,6 @@ home.addEventListener('click', () => {
     
     
 })
+
+
+// by ValNas
