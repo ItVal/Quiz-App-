@@ -107,7 +107,7 @@ input[type="email"]:invalid{
     width: 100%;
     display: flex;
     align-items: center;
-    border:1px solid #DDDDDD;
+    border:2px solid #DDDDDD;
     padding-top: 10px;
     padding-bottom: 10px;
 
@@ -118,6 +118,10 @@ input[type="radio"]:checked +label::before {
     background-color: green;
 
 }
+input[type="radio"]:checked +label{
+    border-color: green;
+}
+
 input[type="radio"] +label:hover {
 
     border-color: green;
