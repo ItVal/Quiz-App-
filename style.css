@@ -224,3 +224,111 @@ span > input{
     text-align: center; 
 }
 
+/* Responsive */
+/* ============ */
+@media screen and (max-width:110px) {
+    /* login */
+    .quizSec{
+        width: 400px;
+        height: 95%;
+    }
+    .btn{
+        width: 150px;
+        margin-top: 3px;
+    }
+    .enoncer{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .titre{
+        margin-top: 30px;
+    }
+    /* quiz */
+    
+}
+
+@media screen and (max-width:450px) {
+    /* login */
+    .quizSec{
+        width: 350px;
+        height: 520px;
+    }
+    .btn{
+        margin-top: 0px;
+    }
+    .titre{
+        margin-top: 30px;
+    }
+    /* quiz */
+    
+}
+
+@media screen and (max-width:360px) {
+    /* login */
+    .quizSec{
+        width: 300px;
+        height: 520px;
+    }
+    .btn{
+        width: 70px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        font-size: 10px;
+        height: 30px;
+    }
+    .enoncer{
+        margin-top: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .titre{
+        margin-top: 30px;
+    }
+   .form{
+    margin-top: 40px;
+    margin-left: 25px;
+    margin-bottom: 0px;
+   }
+   .input{
+    height: 35px;
+    width: 250px;
+    margin-top: 5px;
+   }
+    /* quiz */
+    
+}
+
+
+@media screen and (max-width:270px) {
+    /* login */
+    .quizSec{
+        width: 200px;
+        height: 520px;
+    }
+    .btn{
+        width: 70px;
+        margin-bottom: 50px;
+        font-size: 10px;
+        height: 30px;
+    }
+    .enoncer{
+        margin-top: 0px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .titre{
+        margin-top: 30px;
+    }
+   .form{
+    margin-top: 90px;
+    margin-left: 15px;
+    margin-bottom: 0px;
+   }
+   .input{
+    height: 25px;
+    width: 170px;
+    margin-top: 2px;
+   }
+    /* quiz */
+    
+}
