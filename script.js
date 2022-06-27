@@ -335,4 +335,6 @@ const home = document.querySelector("#begining");
 home.addEventListener('click', () => {
     document.getElementById("resultat").style.display = "none";
     document.getElementById("accueil").style.display = "flex";
+    deselectAnswers()
+    
 })
