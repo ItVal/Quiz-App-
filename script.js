@@ -29,7 +29,7 @@ function validateEmail(){
     }
     if (regex.test(userEmail.value)){ 
     errEmail.innerText = "Votre mail est valide, cliquer sur commencer"
-    errEmail.style.color = "bleu";
+    
    return true;
     }
     else { 
@@ -328,4 +328,11 @@ btnQuit.addEventListener('click', () => {
         }
     }
 
+})
+
+//Home Button
+const home = document.querySelector("#begining");
+home.addEventListener('click', () => {
+    document.getElementById("resultat").style.display = "none";
+    document.getElementById("accueil").style.display = "flex";
 })
