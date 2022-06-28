@@ -267,8 +267,9 @@ function captSelected() {
 
 // next to finish btn
 function boutonTerminer(){
-    if (contTab == 14) {
-        submitBtn.innerText = "Terminer";
+    if (contTab >= 14) {
+        console.log(contTab);
+        document.getElementById("submit").value = "Terminer";
     }
 }
 
@@ -302,9 +303,8 @@ radioBtn.forEach(btnRadio => {
 //Next Button
 
 submitBtn.addEventListener('click', () => {
-    // reunitialiser()
+   
     const reponse = captSelected()
- 
     k = 100;
     i = 60
     if (reponse){

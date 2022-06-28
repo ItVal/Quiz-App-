@@ -64,7 +64,7 @@ input[type="email"]:invalid{
     font-size: 20px;
     font-weight: bold;
     background-color: green;
-    height: 40px;
+    height: 50px;
     width: 150px;
     margin-top: 30px;
     margin-bottom: 35px;
@@ -136,7 +136,6 @@ input[type="radio"] +label:hover {
     border:1px solid #dddddd;
     border-radius:50%;
     margin:0 15px;
-
 }
 
 #question{
@@ -149,7 +148,7 @@ input[type="radio"] +label:hover {
     font-size: 20px;
     font-weight: bold;
     background-color: #0080006c;
-    height: 40px;
+    height: 50px;
     width: 150px;
     margin-top: 30px;
     margin-bottom: 35px;
@@ -161,7 +160,7 @@ input[type="radio"] +label:hover {
     font-size: 20px;
     font-weight: bold;
     background-color: green;
-    height: 40px;
+    height: 50px;
     width: 150px;
     margin-top: 30px;
     margin-bottom: 35px;
@@ -174,7 +173,7 @@ input[type="radio"] +label:hover {
     font-size: 20px;
     font-weight: bold;
     background-color: #EC880C;
-    height: 40px;
+    height: 50px;
     width: 150px;
     margin-top: 30px;
     margin-bottom: 35px;
@@ -244,6 +243,24 @@ span > input{
         margin-top: 30px;
     }
     /* quiz */
+    #titre{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .res-containeur{
+        
+        margin: 0.7rem 0;
+        cursor: pointer;
+        margin-right: 5px;
+        margin-left: 10px;
+    
+    }
+    
+.quesTimer{
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
     
 }
 
