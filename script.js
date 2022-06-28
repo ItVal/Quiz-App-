@@ -50,7 +50,7 @@ beginPage.addEventListener("click", function (e) {
         document.getElementById("question").style.display = "flex";
         // storage emai & name
         resName.innerHTML = userName.value;
-        resEmail.innerHTML = userEmail.value;
+        affEmail.innerHTML = userEmail.value;
         
     }
 })
