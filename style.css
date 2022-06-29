@@ -74,6 +74,7 @@ input[type="email"]:invalid{
     margin-bottom: 35px;
     border-radius: 10px; 
     cursor: pointer;
+    color: white;
 }
 .btn-class{
     text-align: center;
@@ -158,6 +159,7 @@ input[type="radio"] +label:hover {
     margin-bottom: 35px;
     border-radius: 5px; 
     cursor: not-allowed;
+    color: white;
 }
 #begining{
     border: none;
@@ -170,6 +172,7 @@ input[type="radio"] +label:hover {
     margin-bottom: 35px;
     border-radius: 5px; 
     cursor: pointer;
+    color: white;
 }
 .btnQ{
     border: none;
@@ -184,6 +187,7 @@ input[type="radio"] +label:hover {
     border-radius: 10px; 
     margin-right: 30px;
     cursor: pointer;
+    color: white;
 }
 .quesTimer{
     display: flex;
@@ -228,7 +232,7 @@ span > input{
 }
 /* Responsive */
 /* ============ */
-@media screen and (max-width:1100px) {
+@media all and (max-device-width:1105px) {
     /* login */
     body{
         margin-left: 25%;
@@ -245,13 +249,19 @@ span > input{
     .btn{
         width: 150px;
         margin-top: 20px;
+        height: 60px;
     }
     .enoncer{
         margin-left: 10px;
         margin-right: 10px;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
     .titre{
-        margin-top: 30px;
+        margin-top: 70px;
+    }
+    .input{
+        height: 45px;
     }
 
 /* quiz */
@@ -285,12 +295,12 @@ span > input{
 }
 .btnQ{
     height: 50px;
-    width: 100px;
+    width: 150px;
     margin-top: 25px;
 }
 .btnS{
     height: 50px;
-    width: 100px;
+    width: 150px
     margin-top: 25px;
 
 }
@@ -304,7 +314,7 @@ span > input{
     margin-top: 30px;
 }
 
-@media screen and (max-width:890px) {
+@media all and (max-device-width: 890px) {
     /* login */
     body{
         margin-left: 25%;
@@ -314,15 +324,16 @@ span > input{
         justify-content: center;
         height: 100vh;
     }
+    
     .quizSec{
         width: 350px;
         height: 520px;
     }
     .btn{
-        margin-top: 25px;
+        margin-top: 10px;
     }
     .titre{
-        margin-top: 30px;
+        margin-top: 20px;
     }
     /* quiz */
     #titre{
@@ -370,7 +381,7 @@ span > input{
         
 }
 
-@media screen and (max-width:650px) {
+@media all and (max-device-width:600px) {
     /* login */
     body{
         margin-left: 20%;
@@ -385,11 +396,11 @@ span > input{
         height: 520px;
     }
     .btn{
-        width: 100px;
-        margin-top: 15px;
-        margin-bottom: 20px;
-        font-size: 10px;
-        height: 35px;
+        width: 150px;
+        margin-top: 25px;
+        margin-bottom: 0px;
+        font-size: 20px;
+        height: 50px;
     }
     .enoncer{
         margin-top: 10px;
@@ -398,13 +409,14 @@ span > input{
     }
    .form{
     margin-top: 5px;
-    margin-left: 25px;
+    margin-left: 30px;
     margin-bottom: 0px;
    }
    .input{
     height: 35px;
-    width: 95%;
+    width: 105%;
     margin-top: 5px;
+    border: 1px solid rgb(87, 77, 77);
    }
     /* quiz */
     #titre{
@@ -429,8 +441,8 @@ span > input{
         cursor: pointer;
         margin-right: 10px;
         margin-left: 5px;
-    
     }
+    
     .qChart{
         margin-top: 16px;
     }
@@ -446,7 +458,7 @@ span > input{
 }
 
 
-@media screen and (max-width:390px) {
+@media screen and (max-width: 450px) {
     /* login */
     body{
         margin-left: 10%;
@@ -461,11 +473,11 @@ span > input{
         height: 520px;
     }
     .btn{
-        width: 70px;
+        width: 150px;
         margin-bottom: 60px;
         margin-top: 20px;
-        font-size: 10px;
-        height: 30px;
+        font-size: 20px;
+        height: 50px;
     }
     .enoncer{
         margin-top: 0px;
@@ -516,6 +528,59 @@ span > input{
     .btnS{
         height: 50px;
         width: 100px;
+  
+    }
+}
+
+@media screen and (max-width: 295px) {
+    /* login */
+    body{
+        margin-left: 10%;
+        margin-right: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .quizSec{
+        width: 250px;
+        height: 590px;
+    }
+    .btn{
+        width: 150px;
+        margin-bottom: 60px;
+        margin-top: 20px;
+        font-size: 20px;
+        height: 50px;
+    }
+    .enoncer{
+        margin-top: 0px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .titre{
+        margin-top: 50px;
+    }
+   .form{
+    margin-top: 5px;
+    margin-left: 15px;
+    margin-bottom: 0px;
+   }
+ 
+    /* quiz */
+    #titre{
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    .btnQ{
+        height: 50px;
+        width: 80px;
+        margin-top: 30px;
+    }
+    .btnS{
+        height: 50px;
+        width: 80px;
+        margin-top: 30px;
   
     }
 }

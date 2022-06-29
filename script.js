@@ -28,9 +28,9 @@ function validateEmail(){
     return false;
     }
     if (regex.test(userEmail.value)){ 
-    errEmail.innerText = "Votre mail est valide, cliquer sur commencer"
+    errEmail.innerText = " "
     
-   return true;
+   return true
     }
     else { 
         errEmail.innerText = "Entrez une adresse mail valide svp!"
