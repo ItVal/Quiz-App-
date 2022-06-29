@@ -34,7 +34,7 @@ function validateEmail(){
     }
     else { 
         errEmail.innerText = "Entrez une adresse mail valide svp!"
-        errEmail.style.color = "red";
+        errEmail.style.color = "green";
         return false;
     }
   
