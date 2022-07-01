@@ -1,98 +1,89 @@
 // validation name and email
 const userName = document.querySelector("#userName");
 const userEmail = document.querySelector("#userEmail");
-function validateNameAndEmail(){
+function validateNameAndEmail() {
     const regex = /^([a-zA-Z0-9.]{1,20})@([a-zA-Z0-9.]{1,20})\.([a-zA-Z]{2,5})$/;
     const regexName = /^[A-Za-z0-9.-]{2,30}$/;
-    if (userEmail.value.length && userName.value.length == 0){ 
-    errName.innerText = "Renseignez un nom svp!"
-    errName.style.color = "red";
-    errEmail.innerText = "Renseignez une adresse mail svp!"
-    errEmail.style.color = "red";
-    return false;
+    if (regex.test(userEmail.value) && regexName.test(userName.value)) {
+        errEmail.innerText = " "
+        errName.innerText = " "
+        return true
     }
-    if (regex.test(userEmail.value) && regexName.test(userName.value)){ 
-    errEmail.innerText = " "
-    errName.innerText = " "
-   return true
-    }
-    else if (regex.test(userEmail.value) && !regexName.test(userName.value)){ 
+    else if (regex.test(userEmail.value) && !regexName.test(userName.value)) {
         errEmail.innerText = " "
         errName.innerText = "Renseignez un nom valide svp!"
-       return false
-        }
-    else if (!regex.test(userEmail.value) && regexName.test(userName.value)){ 
+        return false
+    }
+    else if (!regex.test(userEmail.value) && regexName.test(userName.value)) {
         errEmail.innerText = "Renseignez une adresse mail svp!"
         errName.innerText = " "
         return false
-            }
+    }
 
-    else { 
+    else {
         errName.innerText = "Renseignez un nom valide svp!"
         errName.style.color = "red";
         errEmail.innerText = "Entrez une adresse mail valide svp!"
         errEmail.style.color = "red";
         return false;
     }
-  
+
 }
 userName.addEventListener("input", validateNameAndEmail)
 userEmail.addEventListener("input", validateNameAndEmail)
 
 // Chargement section questions
-const  beginPage = document.getElementById("btnBegin")
+const beginPage = document.getElementById("btnBegin")
 beginPage.addEventListener("click", function (e) {
     e.preventDefault();
-    if (validateNameAndEmail()){
+    if (validateNameAndEmail()) {
         document.getElementById("accueil").style.display = "none";
         document.getElementById("question").style.display = "flex";
         // storage emai & name
         resName.innerHTML = userName.value;
         affEmail.innerHTML = userEmail.value;
-        
+
     }
 })
 
 // ProgressBar
 let k = 100;
-setInterval(() =>{
-    if(k >= 0 && quiz.style.display == "flex" ){
+setInterval(() => {
+    if (k >= 0 && quiz.style.display == "flex") {
         document.querySelector("#progressBs").style.width = k + "%";
         k--
     }
 }, 600)
 
-
 // Timeming for question
 const quiz = document.getElementById("question");
 let i = 60;
 setInterval(() => {
-    if (i >= 0 &&  quiz.style.display == "flex" ){
+    if (i >= 0 && quiz.style.display == "flex") {
         timer.innerHTML = i;
         i--
     }
-    if (i <= 0){
-       timeOut();
-     }
+    if (i <= 0) {
+        timeOut();
+    }
 }, 1000);
 
 // a function who help to going to the next question when time is over
- function timeOut() {
-    if (i < 0) { 
-        // reunitialiser()
+function timeOut() {
+    if (i < 0) {
         contTab++
         const reponse = captSelected()
         k = 100;
         i = 60
-    if (reponse){
-        if (reponse === quizData[contTab].correct){
-            score++
+        if (reponse) {
+            if (reponse === quizData[contTab].correct) {
+                score++
+            }
         }
-     }
-        if(contTab < quizData.length){
+        if (contTab < quizData.length) {
             loadQuiz()
         }
-   }
+    }
 }
 
 //quiz objet
@@ -232,17 +223,17 @@ let score = 0
 //chargement de questions
 function loadQuiz() {
     deselectAnswers()
-     const tabQuiz = quizData[contTab]
-     const nextQ = document.querySelector("#charQ")
-     affQuestion.innerText = tabQuiz.question
-     assertionA.innerText = tabQuiz.a
-     assertionB.innerText = tabQuiz.b
-     assertionC.innerText = tabQuiz.c
-     assertionD.innerText = tabQuiz.d
+    const tabQuiz = quizData[contTab]
+    const nextQ = document.querySelector("#charQ")
+    affQuestion.innerText = tabQuiz.question
+    assertionA.innerText = tabQuiz.a
+    assertionB.innerText = tabQuiz.b
+    assertionC.innerText = tabQuiz.c
+    assertionD.innerText = tabQuiz.d
 
-     let questionNumber = parseInt(contTab) + 1
-     nextQ.innerText = "Question " + questionNumber + "/15"  
-    
+    let questionNumber = parseInt(contTab) + 1
+    nextQ.innerText = "Question " + questionNumber + "/15"
+
 }
 loadQuiz()
 
@@ -253,19 +244,18 @@ function deselectAnswers() {
 
 // capture de la selection
 function captSelected() {
-    let reponse 
+    let reponse
     radioBtn.forEach(btnRadio => {
-        if (btnRadio.checked){
+        if (btnRadio.checked) {
             reponse = btnRadio.id
         }
     })
-    return reponse 
+    return reponse
 }
 
 // next to finish btn
-function boutonTerminer(){
+function boutonTerminer() {
     if (contTab >= 14) {
-        console.log(contTab);
         document.getElementById("submit").value = "Terminer";
     }
 }
@@ -279,8 +269,8 @@ function imgEchec() {
 
 const submitBtn = document.querySelector("#submit");
 
-function disabledBtn(){
-    if (btnRadio.checked){
+function disabledBtn() {
+    if (btnRadio.checked) {
         submitBtn.disabled = false;
     }
 }
@@ -288,37 +278,37 @@ function disabledBtn(){
 radioBtn.forEach(btnRadio => {
     btnRadio.addEventListener('click', () => {
         console.log("checked ")
-        if (btnRadio.checked){
+        if (btnRadio.checked) {
             submitBtn.disabled = false
             submitBtn.style.backgroundColor = "green"
             submitBtn.style.cursor = "pointer";
         }
     })
-    
+
 })
 
 //Next Button
 
 submitBtn.addEventListener('click', () => {
-   
+
     const reponse = captSelected()
     k = 100;
     i = 60
-    if (reponse){
-        if (reponse === quizData[contTab].correct){
+    if (reponse) {
+        if (reponse === quizData[contTab].correct) {
             score++
         }
         contTab++
         boutonTerminer()
-        
-        if(contTab < quizData.length){
+
+        if (contTab < quizData.length) {
             loadQuiz()
             submitBtn.disabled = true;
             submitBtn.style.cursor = "not-allowed";
             submitBtn.style.backgroundColor = "#0080006c"
         }
-        
-        else{
+
+        else {
             document.getElementById("question").style.display = "none";
             imgEchec()
             document.getElementById("resultat").style.display = "flex";
@@ -333,17 +323,15 @@ const btnQuit = document.querySelector(".btnQ");
 
 btnQuit.addEventListener('click', () => {
     const reponse = captSelected()
- 
-    if (reponse){
-        if (reponse === quizData[contTab].correct){
+
+    if (reponse) {
+        if (reponse === quizData[contTab].correct) {
             score++
         }
 
         contTab++
-        
-        
     }
-    if(contTab < quizData.length) {
+    if (contTab < quizData.length) {
         document.getElementById("question").style.display = "none";
         imgEchec()
         document.getElementById("resultat").style.display = "flex";
@@ -356,10 +344,6 @@ btnQuit.addEventListener('click', () => {
 const home = document.querySelector("#begining");
 home.addEventListener('click', () => {
     location.reload(true);
-    // document.getElementById("resultat").style.display = "none";
-    // document.getElementById("accueil").style.display = "flex";
-    
-    
 })
 
 

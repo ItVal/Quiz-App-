@@ -1,588 +1,662 @@
  /* by ValNas */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100&&display=swap");
+ @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100&&display=swap");
 
-*{
-    box-sizing: border-box;
-    font-family: Inter;
-}
-body{
-    background-image: linear-gradient(90deg, #85F6B8 0%, rgba(142, 217, 235, 0.58) 99.84%);
-    background-blend-mode: darken ;
-    font-family: sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-    margin-left: 35%;
-    margin-right: 35%;
-    
-}
+ * {
+     box-sizing: border-box;
+     font-family: Inter;
+ }
 
+ body {
+     background-image: linear-gradient(90deg, #85F6B8 0%, rgba(142, 217, 235, 0.58) 99.84%);
+     background-blend-mode: darken;
+     font-family: sans-serif;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100vh;
+     overflow: hidden;
+     margin-left: 35%;
+     margin-right: 35%;
 
+ }
 
-input[type="email"]:invalid{
-    border-color: red;
-}
+ input[type="email"]:invalid {
+     border-color: red;
+ }
 
-/* cacher nos deux autres sections par defaut */
-#resultat, #question{
-    display: none;
-}
+ /* cacher nos deux autres sections par defaut */
+ #resultat,
+ #question {
+     display: none;
+ }
 
-/* contenaire principal */
-.quizSec{
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
-    overflow: hidden;
-    width: 600px;
-    padding: 0%;
-    
-}
+ /* contenaire principal */
+ .quizSec {
+     display: flex;
+     flex-direction: column;
+     background-color: #fff;
+     border-radius: 5px;
+     box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+     overflow: hidden;
+     width: 600px;
+     padding: 0%;
 
-.titre{
-    text-align: center;
-    margin-top: 10;
-    padding: 1rem 1rem 0;
-}
-.enoncer{
-    text-align: center;
-    margin-bottom: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
-}
-.form{
-    display: grid;
-    gap: 10px;
-    text-align: left;
-    margin-left: 35px;
-    margin-right: 25px;
-}
-.btn{
-    border: none;
-    border-radius: 10px solid;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: green;
-    height: 50px;
-    width: 150px;
-    margin-top: 30px;
-    margin-bottom: 35px;
-    border-radius: 10px; 
-    cursor: pointer;
-    color: white;
-}
-.btn-class{
-    text-align: center;
-}
-.input{
-    height: 35px;
-    
-}
-.btn-contenaire{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    
-}
+ }
 
-.boutonR{
-    margin-left: 10px;  
-}
-.res-containeur{
-    border: 2px solid transparent;
-    margin: 1.2rem 0;
-    cursor: pointer;
-    margin-right: 20px;
-    margin-left: 25px;
+ .titre {
+     text-align: center;
+     margin-top: 10;
+     padding: 1rem 1rem 0;
+ }
 
-}
-.res{
-    margin-left: 10px;
-    background-color: green;
-    display: none;
-}
-.item{
-    cursor: pointer;
-    display: block;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    border:2px solid #DDDDDD;
-    padding-top: 10px;
-    padding-bottom: 10px;
+ .enoncer {
+     text-align: center;
+     margin-bottom: 30px;
+     margin-left: 30px;
+     margin-right: 30px;
+ }
 
-}
-input[type="radio"]:checked +label::before {
-    
-    border-color: green;
-    background-color: green;
+ .form {
+     display: grid;
+     gap: 10px;
+     text-align: left;
+     margin-left: 35px;
+     margin-right: 25px;
+ }
 
-}
-input[type="radio"]:checked +label{
-    border-color: green;
-}
+ .btn {
+     border: none;
+     border-radius: 10px solid;
+     font-size: 20px;
+     font-weight: bold;
+     background-color: green;
+     height: 50px;
+     width: 150px;
+     margin-top: 30px;
+     margin-bottom: 35px;
+     border-radius: 10px;
+     cursor: pointer;
+     color: white;
+ }
 
-input[type="radio"] +label:hover {
+ .btn-class {
+     text-align: center;
+ }
 
-    border-color: green;
-}
-.item::before {
-    content:"";
-    display: block;
-    width:15px;
-    height: 15px;
-    border:1px solid #dddddd;
-    border-radius:50%;
-    margin:0 15px;
-}
+ .input {
+     height: 35px;
 
-#question{
-    width: 900px;
-}
+ }
 
-.btnS{
-    border: none;
-  
-    font-size: 20px;
-    font-weight: bold;
-    background-color: #0080006c;
-    height: 50px;
-    width: 150px;
-    margin-top: 30px;
-    margin-bottom: 35px;
-    border-radius: 5px; 
-    cursor: not-allowed;
-    color: white;
-}
-#begining{
-    border: none;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: green;
-    height: 50px;
-    width: 150px;
-    margin-top: 30px;
-    margin-bottom: 35px;
-    border-radius: 5px; 
-    cursor: pointer;
-    color: white;
-}
-.btnQ{
-    border: none;
-    border-radius: 30px solid;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: #EC880C;
-    height: 50px;
-    width: 150px;
-    margin-top: 30px;
-    margin-bottom: 35px;
-    border-radius: 10px; 
-    margin-right: 30px;
-    cursor: pointer;
-    color: white;
-}
-.quesTimer{
-    display: flex;
-    justify-content: space-between;
-    margin-left: 35px;
-    margin-right: 20px;
-    margin-top: 20px;
-}
-.progressBar{
-    width: 88%;
-    height: 10px;
-    border-radius: 3px;
-    background-color: #DDDDDD;
-    margin-bottom: 10px;
-    margin-left: 35px;
-}
-.progressBars{
-    width: 100%;
-    height: 10px;
-    border-radius: 3px;
-    background-color: green;
-    margin-bottom: 10px;
-    
-}
+ .btn-contenaire {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
 
-span > input{
-    cursor: pointer;
-}
+ }
 
-/* resultat */
-#resultat{
-    width: 900px;
-}
-.imageRes{
-    text-align: center;
-}
-.score{
-    text-align: center;
-}
-#affEmail{
-    text-align: center; 
-}
-/* Responsive */
-/* ============ */
-@media all and (max-device-width:1105px) {
-    /* login */
-    body{
-        margin-left: 25%;
-        margin-right: 25%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-    }
-    .quizSec{
-        width: 400px;
-        height: 93%;
-    }
-    .btn{
-        width: 150px;
-        margin-top: 20px;
-        height: 60px;
-    }
-    .enoncer{
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-    .titre{
-        margin-top: 70px;
-    }
-    .input{
-        height: 45px;
-    }
+ .boutonR {
+     margin-left: 10px;
+ }
 
-/* quiz */
+ .res-containeur {
+     border: 2px solid transparent;
+     margin: 1.2rem 0;
+     cursor: pointer;
+     margin-right: 20px;
+     margin-left: 25px;
 
-#titre{
-    margin-top: 30px;
-    margin-bottom: 0px;
-}
-.quesTimer{
-     margin-left: 15px;
-    margin-right: 15px;
-    margin-top: 25px;
-    margin-bottom: 0px;
-}
-#progressB{
-    margin-top: 1px;
-    margin-left: 15px;
-    margin-right: 0px;
-    width: 91%;
-}
-.res-containeur{
-    border: 2px solid transparent;
-    margin: 0.9rem 0;
-    cursor: pointer;
-    margin-right: 10px;
-    margin-left: 5px;
+ }
 
-}
-.qChart{
-    margin-top: 16px;
-}
-.btnQ{
-    height: 50px;
-    width: 150px;
-    margin-top: 25px;
-}
-.btnS{
-    height: 50px;
-    width: 150px
-    margin-top: 25px;
+ .res {
+     margin-left: 10px;
+     background-color: green;
+     display: none;
+ }
 
-}
+ .item {
+     cursor: pointer;
+     display: block;
+     height: 100%;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     border: 2px solid #DDDDDD;
+     padding-top: 10px;
+     padding-bottom: 10px;
 
-#begining{
-     margin-top: 20px
-   }
-    
-}
-.btn{
-    margin-top: 30px;
-}
+ }
 
-@media all and (max-device-width: 890px) {
-    /* login */
-    body{
-        margin-left: 25%;
-        margin-right: 25%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-    }
-    
-    .quizSec{
-        width: 350px;
-        height: 520px;
-    }
-    .btn{
-        margin-top: 10px;
-    }
-    .titre{
-        margin-top: 20px;
-    }
-    /* quiz */
-    #titre{
-        margin-top: 5px;
-        margin-bottom: 0px;
-    }
-    .quesTimer{
+ input[type="radio"]:checked+label::before {
+
+     border-color: green;
+     background-color: green;
+
+ }
+
+ input[type="radio"]:checked+label {
+     border-color: green;
+ }
+
+ input[type="radio"]+label:hover {
+
+     border-color: green;
+ }
+
+ .item::before {
+     content: "";
+     display: block;
+     width: 15px;
+     height: 15px;
+     border: 1px solid #dddddd;
+     border-radius: 50%;
+     margin: 0 15px;
+ }
+
+ #question {
+     width: 900px;
+ }
+
+ .btnS {
+     border: none;
+
+     font-size: 20px;
+     font-weight: bold;
+     background-color: #0080006c;
+     height: 50px;
+     width: 150px;
+     margin-top: 30px;
+     margin-bottom: 35px;
+     border-radius: 5px;
+     cursor: not-allowed;
+     color: white;
+ }
+
+ #begining {
+     border: none;
+     font-size: 20px;
+     font-weight: bold;
+     background-color: green;
+     height: 50px;
+     width: 150px;
+     margin-top: 30px;
+     margin-bottom: 35px;
+     border-radius: 5px;
+     cursor: pointer;
+     color: white;
+ }
+
+ .btnQ {
+     border: none;
+     border-radius: 30px solid;
+     font-size: 20px;
+     font-weight: bold;
+     background-color: #EC880C;
+     height: 50px;
+     width: 150px;
+     margin-top: 30px;
+     margin-bottom: 35px;
+     border-radius: 10px;
+     margin-right: 30px;
+     cursor: pointer;
+     color: white;
+ }
+
+ .quesTimer {
+     display: flex;
+     justify-content: space-between;
+     margin-left: 35px;
+     margin-right: 20px;
+     margin-top: 20px;
+ }
+
+ .progressBar {
+     width: 88%;
+     height: 10px;
+     border-radius: 3px;
+     background-color: #DDDDDD;
+     margin-bottom: 10px;
+     margin-left: 35px;
+ }
+
+ .progressBars {
+     width: 100%;
+     height: 10px;
+     border-radius: 3px;
+     background-color: green;
+     margin-bottom: 10px;
+
+ }
+
+ span>input {
+     cursor: pointer;
+ }
+
+ /* resultat */
+ #resultat {
+     width: 900px;
+ }
+
+ .imageRes {
+     text-align: center;
+ }
+
+ .score {
+     text-align: center;
+ }
+
+ #affEmail {
+     text-align: center;
+ }
+
+ /* Responsive */
+ /* ============ */
+ @media all and (max-device-width:1105px) {
+
+     /* login */
+     body {
+         margin-left: 25%;
+         margin-right: 25%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 100vh;
+     }
+
+     .quizSec {
+         width: 400px;
+         height: 93%;
+     }
+
+     .btn {
+         width: 150px;
+         margin-top: 20px;
+         height: 60px;
+     }
+
+     .enoncer {
          margin-left: 10px;
-        margin-right: 15px;
-        margin-top: 19px;
-        margin-bottom: 0px;
-    }
-    #progressB{
-        margin-top: 1px;
-        margin-left: 15px;
-        margin-right: 0px;
-        width: 91%;
-    }
-    .res-containeur{
-        border: 2px solid transparent;
-        margin: 0.2rem 0;
-        cursor: pointer;
-        margin-right: 10px;
-        margin-left: 5px;
-    
-    }
-    .qChart{
-        margin-top: 16px;
-    }
-    .btnQ{
-        height: 50px;
-        width: 100px;
-        margin-top: 10px;
-    }
-    .btnS{
-        height: 50px;
-        width: 100px;
-        margin-top: 10px;
-  
-    }
-  
-   #begining{
-    margin-top: 10px
-   }
-        
-}
+         margin-right: 10px;
+         margin-top: 30px;
+         margin-bottom: 30px;
+     }
 
-@media all and (max-device-width:600px) {
-    /* login */
-    body{
-        margin-left: 20%;
-        margin-right: 20%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-    }
-    .quizSec{
-        width: 300px;
-        height: 520px;
-    }
-    .btn{
-        width: 150px;
-        margin-top: 25px;
-        margin-bottom: 0px;
-        font-size: 20px;
-        height: 50px;
-    }
-    .enoncer{
-        margin-top: 10px;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-   .form{
-    margin-top: 5px;
-    margin-left: 30px;
-    margin-bottom: 0px;
-   }
-   .input{
-    height: 35px;
-    width: 105%;
-    margin-top: 5px;
-    border: 1px solid rgb(87, 77, 77);
-   }
-    /* quiz */
-    #titre{
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
-    .quesTimer{
+     .titre {
+         margin-top: 70px;
+     }
+
+     .input {
+         height: 45px;
+     }
+
+     /* quiz */
+
+     #titre {
+         margin-top: 30px;
+         margin-bottom: 0px;
+     }
+
+     .quesTimer {
          margin-left: 15px;
-        margin-right: 15px;
-        margin-top: 10px;
-        margin-bottom: 0px;
-    }
-    #progressB{
-        margin-top: 1px;
-        margin-left: 15px;
-        margin-right: 0px;
-        width: 91%;
-    }
-    .res-containeur{
-        border: 2px solid transparent;
-        margin: 0.2rem 0;
-        cursor: pointer;
-        margin-right: 10px;
-        margin-left: 5px;
-    }
-    
-    .qChart{
-        margin-top: 16px;
-    }
-    .btnQ{
-        height: 50px;
-        width: 100px;
-    }
-    .btnS{
-        height: 50px;
-        width: 100px;
-  
-    }
-}
+         margin-right: 15px;
+         margin-top: 25px;
+         margin-bottom: 0px;
+     }
 
-
-@media screen and (max-width: 450px) {
-    /* login */
-    body{
-        margin-left: 10%;
-        margin-right: 10%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-    }
-    .quizSec{
-        width: 250px;
-        height: 520px;
-    }
-    .btn{
-        width: 150px;
-        margin-bottom: 60px;
-        margin-top: 20px;
-        font-size: 20px;
-        height: 50px;
-    }
-    .enoncer{
-        margin-top: 0px;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-    .titre{
-        margin-top: 30px;
-    }
-   .form{
-    margin-top: 5px;
-    margin-left: 15px;
-    margin-bottom: 0px;
-   }
- 
-    /* quiz */
-    #titre{
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
-    .quesTimer{
+     #progressB {
+         margin-top: 1px;
          margin-left: 15px;
-        margin-right: 15px;
-        margin-top: 10px;
-        margin-bottom: 0px;
-    }
-    #progressB{
-        margin-top: 1px;
-        margin-left: 15px;
-        margin-right: 0px;
-        width: 91%;
-    }
-    .res-containeur{
-        border: 2px solid transparent;
-        margin: 0.2rem 0;
-        cursor: pointer;
-        margin-right: 10px;
-        margin-left: 5px;
-    
-    }
-    .qChart{
-        margin-top: 16px;
-    }
-    .btnQ{
-        height: 50px;
-        width: 100px;
-    }
-    .btnS{
-        height: 50px;
-        width: 100px;
-  
-    }
-}
+         margin-right: 0px;
+         width: 91%;
+     }
 
-@media screen and (max-width: 295px) {
-    /* login */
-    body{
-        margin-left: 10%;
-        margin-right: 10%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-    }
-    .quizSec{
-        width: 250px;
-        height: 590px;
-    }
-    .btn{
-        width: 150px;
-        margin-bottom: 60px;
-        margin-top: 20px;
-        font-size: 20px;
-        height: 50px;
-    }
-    .enoncer{
-        margin-top: 0px;
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-    .titre{
-        margin-top: 50px;
-    }
-   .form{
-    margin-top: 5px;
-    margin-left: 15px;
-    margin-bottom: 0px;
-   }
- 
-    /* quiz */
-    #titre{
-        margin-top: 20px;
-        margin-bottom: 0px;
-    }
-    .btnQ{
-        height: 50px;
-        width: 80px;
-        margin-top: 30px;
-    }
-    .btnS{
-        height: 50px;
-        width: 80px;
-        margin-top: 30px;
-  
-    }
-}
+     .res-containeur {
+         border: 2px solid transparent;
+         margin: 0.9rem 0;
+         cursor: pointer;
+         margin-right: 10px;
+         margin-left: 5px;
 
-/* by ValNas */
+     }
+
+     .qChart {
+         margin-top: 16px;
+     }
+
+     .btnQ {
+         height: 50px;
+         width: 150px;
+         margin-top: 25px;
+     }
+
+     .btnS {
+         height: 50px;
+         width: 150px margin-top: 25px;
+
+     }
+
+     #begining {
+         margin-top: 20px
+     }
+
+ }
+
+ .btn {
+     margin-top: 30px;
+ }
+
+ @media all and (max-device-width: 890px) {
+
+     /* login */
+     body {
+         margin-left: 25%;
+         margin-right: 25%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 100vh;
+     }
+
+     .quizSec {
+         width: 350px;
+         height: 520px;
+     }
+
+     .btn {
+         margin-top: 10px;
+     }
+
+     .titre {
+         margin-top: 20px;
+     }
+
+     /* quiz */
+     #titre {
+         margin-top: 5px;
+         margin-bottom: 0px;
+     }
+
+     .quesTimer {
+         margin-left: 10px;
+         margin-right: 15px;
+         margin-top: 19px;
+         margin-bottom: 0px;
+     }
+
+     #progressB {
+         margin-top: 1px;
+         margin-left: 15px;
+         margin-right: 0px;
+         width: 91%;
+     }
+
+     .res-containeur {
+         border: 2px solid transparent;
+         margin: 0.2rem 0;
+         cursor: pointer;
+         margin-right: 10px;
+         margin-left: 5px;
+
+     }
+
+     .qChart {
+         margin-top: 16px;
+     }
+
+     .btnQ {
+         height: 50px;
+         width: 100px;
+         margin-top: 10px;
+     }
+
+     .btnS {
+         height: 50px;
+         width: 100px;
+         margin-top: 10px;
+
+     }
+
+     #begining {
+         margin-top: 10px
+     }
+
+ }
+
+ @media all and (max-device-width:600px) {
+
+     /* login */
+     body {
+         margin-left: 20%;
+         margin-right: 20%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 100vh;
+     }
+
+     .quizSec {
+         width: 300px;
+         height: 520px;
+     }
+
+     .btn {
+         width: 150px;
+         margin-top: 25px;
+         margin-bottom: 0px;
+         font-size: 20px;
+         height: 50px;
+     }
+
+     .enoncer {
+         margin-top: 10px;
+         margin-left: 5px;
+         margin-right: 5px;
+     }
+
+     .form {
+         margin-top: 5px;
+         margin-left: 30px;
+         margin-bottom: 0px;
+     }
+
+     .input {
+         height: 35px;
+         width: 105%;
+         margin-top: 5px;
+         border: 1px solid rgb(87, 77, 77);
+     }
+
+     /* quiz */
+     #titre {
+         margin-top: 0px;
+         margin-bottom: 0px;
+     }
+
+     .quesTimer {
+         margin-left: 15px;
+         margin-right: 15px;
+         margin-top: 10px;
+         margin-bottom: 0px;
+     }
+
+     #progressB {
+         margin-top: 1px;
+         margin-left: 15px;
+         margin-right: 0px;
+         width: 91%;
+     }
+
+     .res-containeur {
+         border: 2px solid transparent;
+         margin: 0.2rem 0;
+         cursor: pointer;
+         margin-right: 10px;
+         margin-left: 5px;
+     }
+
+     .qChart {
+         margin-top: 16px;
+     }
+
+     .btnQ {
+         height: 50px;
+         width: 100px;
+     }
+
+     .btnS {
+         height: 50px;
+         width: 100px;
+
+     }
+ }
+
+ @media screen and (max-width: 450px) {
+
+     /* login */
+     body {
+         margin-left: 10%;
+         margin-right: 10%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 100vh;
+     }
+
+     .quizSec {
+         width: 250px;
+         height: 520px;
+     }
+
+     .btn {
+         width: 150px;
+         margin-bottom: 60px;
+         margin-top: 20px;
+         font-size: 20px;
+         height: 50px;
+     }
+
+     .enoncer {
+         margin-top: 0px;
+         margin-left: 5px;
+         margin-right: 5px;
+     }
+
+     .titre {
+         margin-top: 30px;
+     }
+
+     .form {
+         margin-top: 5px;
+         margin-left: 15px;
+         margin-bottom: 0px;
+     }
+
+     /* quiz */
+     #titre {
+         margin-top: 0px;
+         margin-bottom: 0px;
+     }
+
+     .quesTimer {
+         margin-left: 15px;
+         margin-right: 15px;
+         margin-top: 10px;
+         margin-bottom: 0px;
+     }
+
+     #progressB {
+         margin-top: 1px;
+         margin-left: 15px;
+         margin-right: 0px;
+         width: 91%;
+     }
+
+     .res-containeur {
+         border: 2px solid transparent;
+         margin: 0.2rem 0;
+         cursor: pointer;
+         margin-right: 10px;
+         margin-left: 5px;
+
+     }
+
+     .qChart {
+         margin-top: 16px;
+     }
+
+     .btnQ {
+         height: 50px;
+         width: 100px;
+     }
+
+     .btnS {
+         height: 50px;
+         width: 100px;
+
+     }
+ }
+
+ @media screen and (max-width: 295px) {
+
+     /* login */
+     body {
+         margin-left: 10%;
+         margin-right: 10%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 100vh;
+     }
+
+     .quizSec {
+         width: 250px;
+         height: 590px;
+     }
+
+     .btn {
+         width: 150px;
+         margin-bottom: 60px;
+         margin-top: 20px;
+         font-size: 20px;
+         height: 50px;
+     }
+
+     .enoncer {
+         margin-top: 0px;
+         margin-left: 5px;
+         margin-right: 5px;
+     }
+
+     .titre {
+         margin-top: 50px;
+     }
+
+     .form {
+         margin-top: 5px;
+         margin-left: 15px;
+         margin-bottom: 0px;
+     }
+
+     /* quiz */
+     #titre {
+         margin-top: 20px;
+         margin-bottom: 0px;
+     }
+
+     .btnQ {
+         height: 50px;
+         width: 80px;
+         margin-top: 30px;
+     }
+
+     .btnS {
+         height: 50px;
+         width: 80px;
+         margin-top: 30px;
+
+     }
+ }
+
+ /* by ValNas */
