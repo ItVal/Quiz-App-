@@ -1,51 +1,49 @@
 // validation name and email
 const userName = document.querySelector("#userName");
 const userEmail = document.querySelector("#userEmail");
-//name
-function validateName(){
-    if (userName.value.length == 0){ 
+function validateNameAndEmail(){
+    const regex = /^([a-zA-Z0-9.]{4,20})@([a-zA-Z0-9.]{1,20})\.([a-zA-Z]{2,5})$/;
+    const regexName = /^[A-Za-z0-9]{2,30}$/;
+    if (userEmail.value.length && userName.value.length == 0){ 
     errName.innerText = "Renseignez un nom svp!"
     errName.style.color = "red";
-   return false;
-    }
-    else if(userName.value.length < 3){ 
-        errName.innerText = "Entrez un nom valide svp!"
-        errName.style.color = "red";
-        return false;
-    }
-    else{ 
-            errName.innerText = ""
-        }
-        return true;
-}
-userName.addEventListener("input", validateName)
-//email
-function validateEmail(){
-    const regex = /^([a-zA-Z0-9.]{4,20})@([a-zA-Z0-9.]{4,20})\.([a-zA-Z]{2,5})$/;
-    if (userEmail.value.length == 0){ 
     errEmail.innerText = "Renseignez une adresse mail svp!"
     errEmail.style.color = "red";
     return false;
     }
-    if (regex.test(userEmail.value)){ 
+    if (regex.test(userEmail.value) && regexName.test(userName.value)){ 
     errEmail.innerText = " "
-    
+    errName.innerText = " "
    return true
     }
+    else if (regex.test(userEmail.value) && !regexName.test(userName.value)){ 
+        errEmail.innerText = " "
+        errName.innerText = "Renseignez un nom valide svp!"
+       return false
+        }
+    else if (!regex.test(userEmail.value) && regexName.test(userName.value)){ 
+        errEmail.innerText = "Renseignez une adresse mail svp!"
+        errName.innerText = " "
+        return false
+            }
+
     else { 
+        errName.innerText = "Renseignez un nom valide svp!"
+        errName.style.color = "red";
         errEmail.innerText = "Entrez une adresse mail valide svp!"
-        errEmail.style.color = "green";
+        errEmail.style.color = "red";
         return false;
     }
   
 }
-userEmail.addEventListener("input", validateEmail)
+userName.addEventListener("input", validateNameAndEmail)
+userEmail.addEventListener("input", validateNameAndEmail)
 
 // Chargement section questions
 const  beginPage = document.getElementById("btnBegin")
 beginPage.addEventListener("click", function (e) {
     e.preventDefault();
-    if (validateName() && validateEmail()){
+    if (validateNameAndEmail()){
         document.getElementById("accueil").style.display = "none";
         document.getElementById("question").style.display = "flex";
         // storage emai & name
