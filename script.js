@@ -2,8 +2,8 @@
 const userName = document.querySelector("#userName");
 const userEmail = document.querySelector("#userEmail");
 function validateNameAndEmail(){
-    const regex = /^([a-zA-Z0-9.]{4,20})@([a-zA-Z0-9.]{1,20})\.([a-zA-Z]{2,5})$/;
-    const regexName = /^[A-Za-z0-9]{2,30}$/;
+    const regex = /^([a-zA-Z0-9.]{1,20})@([a-zA-Z0-9.]{1,20})\.([a-zA-Z]{2,5})$/;
+    const regexName = /^[A-Za-z0-9.-]{2,30}$/;
     if (userEmail.value.length && userName.value.length == 0){ 
     errName.innerText = "Renseignez un nom svp!"
     errName.style.color = "red";
@@ -78,7 +78,7 @@ setInterval(() => {
 
 // a function who help to going to the next question when time is over
  function timeOut() {
-    if (i == 0) { 
+    if (i < 0) { 
         // reunitialiser()
         contTab++
         const reponse = captSelected()
@@ -94,7 +94,6 @@ setInterval(() => {
         }
    }
 }
-
 
 //quiz objet
 const quizData = [
