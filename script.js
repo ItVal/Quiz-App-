@@ -1,42 +1,42 @@
 // validation name and email
 const userName = document.querySelector("#userName");
 const userEmail = document.querySelector("#userEmail");
-function validateNameAndEmail() {
-    const regex = /^([a-zA-Z0-9.]{1,20})@([a-zA-Z0-9.]{1,20})\.([a-zA-Z]{2,5})$/;
-    const regexName = /^[A-Za-z0-9.-]{2,30}$/;
-    if (regex.test(userEmail.value) && regexName.test(userName.value)) {
-        errEmail.innerText = " "
+function validateName() {
+    const regexName = /^[A-Za-zÀ-ž0-9.-]{2,30}$/;
+    if (regexName.test(userName.value)) {
         errName.innerText = " "
         return true
-    }
-    else if (regex.test(userEmail.value) && !regexName.test(userName.value)) {
-        errEmail.innerText = " "
-        errName.innerText = "Renseignez un nom valide svp!"
-        return false
-    }
-    else if (!regex.test(userEmail.value) && regexName.test(userName.value)) {
-        errEmail.innerText = "Renseignez une adresse mail svp!"
-        errName.innerText = " "
-        return false
     }
 
     else {
         errName.innerText = "Renseignez un nom valide svp!"
         errName.style.color = "red";
+        return false;
+    }
+
+}
+userName.addEventListener("input", validateName)
+
+function validateEmail() {
+    const regex = /^([a-zA-Z0-9.]{1,20})@([a-zA-Z0-9.]{1,20})\.([a-zA-Z]{2,5})$/;
+    if (regex.test(userEmail.value)) {
+        errEmail.innerText = " "
+        return true
+    }
+    else {
         errEmail.innerText = "Entrez une adresse mail valide svp!"
         errEmail.style.color = "red";
         return false;
     }
 
 }
-userName.addEventListener("input", validateNameAndEmail)
-userEmail.addEventListener("input", validateNameAndEmail)
+userEmail.addEventListener("input", validateEmail)
 
 // Chargement section questions
 const beginPage = document.getElementById("btnBegin")
 beginPage.addEventListener("click", function (e) {
     e.preventDefault();
-    if (validateNameAndEmail()) {
+    if (validateName() && validateEmail() ) {
         document.getElementById("accueil").style.display = "none";
         document.getElementById("question").style.display = "flex";
         // storage emai & name
@@ -123,7 +123,7 @@ const quizData = [
     {
         question: "Quel est le bon endroit pour insérer un code JavaScript?",
         a: "La section <head>",
-        b: "Les deux sections <head> et <body> sont correctes",
+        b: "<head> et <body> sont correctes",
         c: "La section <body>",
         d: "Aucune de ces réponses n’est vraie.",
         correct: "c",
